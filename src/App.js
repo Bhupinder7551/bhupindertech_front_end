@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./style/App.css";
+import "./style/style.css";
+import Navbar from "./Components/Navbar";
+import Header from "./Components/Header";
+import Service from "./Components/Service";
+import Aboutus from "./Components/Aboutus";
+import News from "./Components/News";
+import Login from "./Components/Login";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Blogs from "./Components/Blogs";
+import BlogState from "./context/blogs/BlogState";
+import Signup from "./Components/Signup";
 
 function App() {
+  const apiKey = "29da1371a62c4864a9b35668e5e536b6";
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BlogState>
+    <Router>
+      <div className="App">
+        {/* <Navbar />
+        <Header />
+        <Blogs /> */}
+        <Routes>
+
+          <Route path="/" element={ [<Navbar />, <Header />,  <Blogs /> ,  <News
+                apiKey={apiKey}
+                key="general"
+                country="in"
+                category="general"
+              />,       <Service />,<Aboutus /> ]} />
+              <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+
+          
+
+        </Routes>
+        {/* <News
+                apiKey={apiKey}
+                key="general"
+                country="in"
+                category="general"
+              />
+        <Service />
+        <Aboutus /> */}
+      </div>
+    </Router>
+    </BlogState>
   );
 }
 

@@ -1,0 +1,418 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,400,400i,700,700i,900,900i");
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #eb5175;
+  --red: #fd5d93;
+  --orange: #f06161;
+  --yellow: #ffc107;
+  --golden: #dcca87;
+  --green: #00f2c3;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-dark: #343a40;
+  --primary: #f06161;
+  --secondary: #6c757d;
+  --success: #00f2c3;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #fd5d93;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  // --font-family: "Permanent Marker", cursive;
+  --font-family:"Raleway", sans-serif;
+  --font-family-sans-serif: "Raleway", sans-serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+$desktop: 1200px;
+$laptop: 1024px;
+$tablet: 768px;
+$phone: 480px;
+
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+body {
+  margin: 0;
+
+  background-color: #0e0e0e;
+  color: white;
+}
+.bg {
+  background-color: #0e0e0e;
+}
+.header {
+  margin-top: 20px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 100px 0;
+}
+.navbar a {
+  font-size: 1.4rem;
+}
+
+.headerimg {
+  position: relative;
+  height: 41rem;
+  margin-top: 5rem;
+  width: 60rem;
+}
+.headerContent {
+  h1 {
+    margin: 4rem;
+    position: relative;
+    color: var(--golden);
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    font-size: 6rem;
+    letter-spacing: 0.04em;
+    line-height: 7rem;
+    text-transform: uppercase;
+  }
+  p {
+    color: whitesmoke;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+      "Courier New", monospace;
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+    margin-top: -1rem;
+  }
+}
+.headerContent:hover {
+  h1:after {
+    content: "";
+    position: absolute;
+    width: 23%;
+    top: 100%;
+    left: 38%;
+    border: 4px solid white;
+  }
+}
+//Service page
+.servicebody {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url(bg.jpg) !important;
+  background-size: cover;
+  background-position: center;
+  margin-top: 12em !important;
+  color: white !important;
+  height: 50rem;
+}
+.rowService {
+  display: flex;
+  margin: 3rem;
+}
+.colService {
+  margin: 3rem;
+  p {
+    text-align: center;
+    padding: 0px 20px;
+  }
+}
+.services {
+  text-align: center;
+
+  letter-spacing: 0.04em;
+  line-height: 6rem;
+}
+.services h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 2rem;
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+.services h1:after {
+  width: 200px;
+  background: white;
+  height: 4px;
+  display: block;
+  margin: 10px auto;
+  content: "";
+}
+.row {
+  margin: 100px;
+}
+.icon {
+  font-size: 20px;
+  margin: 20px auto;
+  padding: 15px 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+  height: 65px;
+  width: 70px;
+}
+.text {
+  h3 {
+    font-size: 45px;
+  }
+  p {
+    font-size: 25px;
+  }
+}
+
+.text:hover {
+  border-bottom: 4px solid black;
+  border-right: 4px solid black;
+  box-shadow: 2px 2px 4px 2px black;
+}
+//about us
+@mixin _h1 {
+  position: relative;
+  color: var(--golden);
+  font-family: var(--font-family);
+
+  letter-spacing: 0.04em;
+  line-height: 6rem;
+  text-transform: uppercase;
+  margin-top: 5rem;
+}
+@mixin _p {
+  font-family: var(--font-family);
+  font-size: 2rem;
+  letter-spacing: 0.24em;
+  line-height: 5rem;
+  margin-top: 5rem;
+}
+@mixin _btn {
+  padding: 10px 40px;
+
+  background-color: var(--golden);
+  color: black;
+  font-size: 1.25rem;
+  font-family: var(--font-family);
+}
+.aboutus {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.86), rgba(0, 0, 0, 0.86)),
+    url(../img/cog-wheel.jpg) !important;
+  background-size: cover;
+  background-position: center;
+  height: 70rem;
+  display: flex;
+}
+.aboutusContent_left {
+  h1 {
+    @include _h1;
+  }
+  p {
+    @include _p;
+  }
+  button {
+    @include _btn;
+    transition: background-color 0.5s ease-out;
+  }
+  button:hover {
+    @include _btn;
+    padding: 12px 42px;
+    font-weight: bold;
+    background-color: var(--yellow);
+  }
+}
+
+.aboutusContent_center {
+  img {
+    height: 55rem;
+    filter: brightness(200%);
+    width: 15rem;
+  }
+}
+.aboutusContent_right {
+  h1 {
+    @include _h1;
+  }
+  p {
+    @include _p;
+  }
+  button {
+    @include _btn;
+    transition: background-color 0.5s ease-out;
+  }
+  button:hover {
+    @include _btn;
+    padding: 12px 42px;
+    font-weight: bold;
+    background-color: var(--yellow);
+  }
+}
+//News
+.news {
+  box-sizing: border-box;
+ 
+  h1 {
+    @include _h1;
+    margin-bottom: 5rem;
+    .btn{
+      @include _btn;
+      margin-left: 1rem;
+      padding: 0.4rem 1rem!important;
+      }
+  }
+  .btn{
+    margin: 6rem 2rem;
+    @include _btn;
+}}
+.card {
+  width: 20rem;
+  height: 35rem;
+  overflow: hidden;
+  position: sticky;
+  img {
+    height: 14rem;
+  }
+  a {
+    @include _btn;
+    text-decoration: none;
+  }
+  a:hover {
+    padding: 12px 42px;
+    font-weight: bold;
+    background-color: var(--yellow);
+  }
+}
+.card:hover {
+  box-shadow: rgb(250, 250, 250) 0px 20px 30px -10px;
+}
+
+.card-title {
+  color: black;
+  height: 2rem;
+}
+.card-text {
+  color: black;
+  height: 7rem;
+}
+.card-text-date {
+  height: 2rem;
+}
+.badge {
+  background-color: red;
+  color: white;
+  transform: translate(-60%, -17%) rotate(45deg);
+  height: 3rem;
+  font-size: 0.99em !important;
+  width: 8em;
+  align-items: center;
+  p {
+    margin-top: 0.95em;
+  }
+}
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+    margin: 50px 0;
+    width: 100% !important;
+  }
+  .headerContent {
+    h1 {
+      margin: 0;
+      color: var(--golden);
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+      font-size: 2em;
+      letter-spacing: 0.04em;
+      line-height: 4em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1em;
+      padding: 0 2em;
+      text-align: center;
+    }
+    h1:after {
+      display: none;
+    }
+  }
+
+  .headerimg {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+  .news {
+    h1 {
+      margin-top: -35rem !important;
+       margin-bottom: -5rem !important;
+      font-size: 1rem;
+      .btn{
+ padding: 0.2rem 0.4rem!important;
+        font-size: 0.6rem;
+      }
+    }
+  }
+  .newscard {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    
+  }
+  .card {
+    width: 30rem;
+    margin-top: 2rem;
+  }
+  .card:hover {
+    width: 30rem;
+  }
+
+  .aboutus {
+    flex-direction: column;
+    .aboutusContent_left {
+      p {
+        font-family: var(--font-family);
+        font-size: 1.5rem;
+        letter-spacing: 0.09em;
+        line-height: 3rem;
+        margin-top: 1rem;
+      }
+    }
+    .aboutusContent_center {
+      display: none;
+    }
+    .aboutusContent_right {
+      p {
+        font-family: var(--font-family);
+        font-size: 1.5rem;
+        letter-spacing: 0.09em;
+        line-height: 3rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+  .services h1 {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    letter-spacing: 0.88rem;
+    padding-top: 1rem;
+    font-size: 1.3rem;
+  }
+  .servicebody {
+    margin: 500px 0;
+    width: 100% !important;
+    height: auto;
+    
+  margin-top: 2em !important;
+  }
+  .rowService {
+    flex-direction: column;
+    max-width: 100%;
+  }
+  .colService {
+    margin: 1rem;
+    h3{
+      font: 1.5em sans-serif;
+    } p{
+      font: 0.92em sans-serif;
+    }
+  }
+}
